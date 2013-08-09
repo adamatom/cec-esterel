@@ -8,7 +8,9 @@ Install noweb (most of the source is written in literate c++)
 and then the normal
 
 ./configure
+
 make
+
 make install
 
 for more information, see the file called readme

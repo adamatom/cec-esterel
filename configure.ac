@@ -63,14 +63,14 @@ options { language="Cpp"; }
 class TestParser extends Parser;
 file : ;
 EOF
-java antlr.Tool test.g > antlr-version 2>&1 || ac_cv_found_antlr=no
+runantlr test.g > antlr-version 2>&1 || ac_cv_found_antlr=no
 antlr_version=`sed 's/^.*Version //
 s/ .*$//' antlr-version`
 rm -f TestParser.cpp TestParser.hpp TestParserTokenTypes.hpp TestParserTokenTypes.txt test.g antlr-version
 ])
 if test $ac_cv_found_antlr = yes ; then
   AC_MSG_RESULT($antlr_version)
-  ANTLR="java antlr.Tool"
+  ANTLR="runantlr"
 else
   ANTLR=""
   AC_MSG_RESULT(no)
